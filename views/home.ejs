@@ -7,8 +7,8 @@
   </head>
 
   <body>
-    <% if (userData.username) { %>
-    <form action="/sign-out" method="get">
+    <% if (userData.nombre) { %>
+    <form action="/login/sign-out" method="get">
       <input type="submit" value="cerrar sesión" />
     </form>
     <% } %>
