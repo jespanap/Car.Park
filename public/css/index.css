@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+
 a {
   text-decoration: none;
   color: unset;
@@ -7,22 +9,30 @@ a {
   text-align: center;
 }
 
+.box1{
+  margin-bottom: 15vh;
+}
+
+
 #logButton {
   background: #040463;
   height: 3vh;
   width: 96vw;
-  border-radius: 50% 50% 0 0;
+  margin-bottom: 3%;
 }
 
-#logButton a {
-  color: #FFFFFF;
-  border-radius: 50% 50% 0 0; 
+#logButton > a {
+  color: #ffffff;
+  border-radius: 50% 50% 0 0;
+  font-family: inter;
 }
 
 #regButton {
-  background: #EFEEF6;
+  background: #efeef6;
+  margin-bottom: 4%;
 }
 
-#regButton a {
+#regButton > a {
   color: #040463;
+  font-family: inter;
 }
