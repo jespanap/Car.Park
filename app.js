@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const expressSession = require('express-session');
 const cookieParser = require('cookie-parser');
 
+const plazasModel = require('./models/plazas');
 
 const app = express();
 
@@ -43,12 +44,15 @@ app.use((req, res, next) => {
 const homeRoutes = require('./routes/homeRoutes');
 const loginRoutes = require('./routes/loginRoutes');
 const registerRoutes = require('./routes/registerRoutes');
+const parkRoutes = require('./routes/parkRoutes');
 
 // definiendo las rutas
 app.use('/', homeRoutes); // Ruta raíz
 app.use('/login', loginRoutes); // Ruta para el login
 app.use('/register', registerRoutes); // Ruta para el registro
+app.use('/park', parkRoutes);
 
 app.listen(3000, () => {
   console.log("Servidor corriendo en http://localhost:3000");
+  plazasModel.modifyPlazaStates();
 });

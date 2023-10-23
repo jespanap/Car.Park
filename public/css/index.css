@@ -3,3 +3,26 @@ a {
   color: unset;
 }
 
+.box {
+  text-align: center;
+}
+
+#logButton {
+  background: #040463;
+  height: 3vh;
+  width: 96vw;
+  border-radius: 50% 50% 0 0;
+}
+
+#logButton a {
+  color: #FFFFFF;
+  border-radius: 50% 50% 0 0; 
+}
+
+#regButton {
+  background: #EFEEF6;
+}
+
+#regButton a {
+  color: #040463;
+}
