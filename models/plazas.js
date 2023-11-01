@@ -1,44 +1,49 @@
 const fs = require('fs');
 const path = require('path');
-const moment = require('moment');
+const moment = require('moment'); // Importar solo Moment.js
 
 const model = {
-  // Ruta del archivo JSON
   route: path.join(__dirname, '../data/plazas.json'),
 
-  // Función para modificar el status de las plazas en función de la hora actual
   modifyPlazaStates: function () {
     setInterval(() => {
+      console.log('Iniciando la modificación de estados...'); // Mensaje de depuración
       fs.readFile(this.route, 'utf8', (err, data) => {
         if (err) {
           console.error('Error al leer el archivo JSON:', err);
           return;
         }
-
+  
+        console.log('Archivo JSON leído correctamente.'); // Mensaje de depuración
+  
         try {
           const plazas = JSON.parse(data);
-
-          // Obtiene la hora actual
+  
+          // Obtener la hora actual
           const currentTime = moment();
-
-          // Modifica el status de las plazas en función de la hora actual
+  
+          // Modificar el status de las plazas en función de la hora actual
           plazas.forEach((plaza) => {
             const plazaTime = moment(plaza.lastModified);
-            const hoursDiff = currentTime.diff(plazaTime, 'hours');
-
-            if (hoursDiff >= 1) {
-              // Si han pasado más de 1 hora desde la última modificación, cambia el status
+            const secondsDiff = currentTime.diff(plazaTime, 'seconds');
+  
+            console.log(`secondsDiff: ${secondsDiff}`);
+            if (secondsDiff >= 30) {
+              console.log(`Plaza modificada: ${plaza.id}`);
               plaza.status = !plaza.status;
+              // Ajustar la fecha para reflejar el pasado
               plaza.lastModified = currentTime.toISOString();
             }
           });
-
-          // Escribe los cambios de nuevo en el archivo JSON
+  
+          // Escribir los cambios de nuevo en el archivo JSON
           fs.writeFile(this.route, JSON.stringify(plazas, null, 2), 'utf8', (err) => {
             if (err) {
               console.error('Error al escribir el archivo JSON:', err);
               return;
             }
+  
+            console.log('Archivo JSON actualizado con éxito.'); // Mensaje de depuración
           });
         } catch (error) {
           console.error('Error al analizar el archivo JSON:', error);
