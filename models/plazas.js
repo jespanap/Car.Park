@@ -30,7 +30,8 @@ const model = {
             console.log(`secondsDiff: ${secondsDiff}`);
             if (secondsDiff >= 30) {
               console.log(`Plaza modificada: ${plaza.id}`);
-              plaza.status = !plaza.status;
+              // Modificando el status de las plazas de manera aleatoria
+              plaza.status = Math.random() >= 0.5;
               // Ajustar la fecha para reflejar el pasado
               plaza.lastModified = currentTime.toISOString();
             }
