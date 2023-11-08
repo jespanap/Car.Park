@@ -16,5 +16,15 @@
             </li>
         <% } %>
     </ul>
+    <div id="recomendaciones">
+        <p>Plazas Desocupadas Recomendadas:</p>
+        <ul>
+            <% for (let plaza of plazas) { %>
+                <% if (!plaza.status) { %>
+                    <li>Plaza <%= plaza.id %></li>
+                <% } %>
+            <% } %>
+        </ul>
+    </div>
 </body>
 </html>

@@ -52,7 +52,7 @@ app.use('/login', loginRoutes); // Ruta para el login
 app.use('/register', registerRoutes); // Ruta para el registro
 app.use('/park', parkRoutes);
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("Servidor corriendo en http://localhost:3000");
   plazasModel.modifyPlazaStates();
 });

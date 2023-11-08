@@ -4,6 +4,30 @@ body {
   font-family: Inter;
 }
 
+header {
+  width: 100%;
+  margin-top: 2vh;
+}
+
+.loginHeader {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-solid {
+  font-size: 2.5vh;
+}
+
+img {
+  width: 15vw;
+  height: 15vh;
+}
+
+h1 {
+  color: #040463;
+}
+
 input {
   border: none;
   outline: none;
@@ -14,11 +38,25 @@ input {
 
 label {
   color: #8391a1;
+  margin-bottom: 0.25vh;
+}
+
+#label2 {
+  margin-top: 3vw;
+}
+
+input {
+  color: #313131;
 }
 
 a {
   text-decoration: none;
   color: unset;
+}
+
+.propiedades {
+  display: flex;
+  flex-direction: column;
 }
 
 button {

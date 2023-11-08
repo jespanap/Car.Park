@@ -12,18 +12,25 @@
   </head>
   <body>
     <header>
-      <a href="/"><i class="fa-solid fa-angle-left"></i></a>
+      <div class="loginHeader">
+        <div id="loginIcon">
+          <a href="/"><i class="fa-solid fa-angle-left"></i></a>
+        </div>
+        <div id="loginImg">
+          <img src="images/Logo.svg" alt="">
+        </div>
+      </div>
     </header>
 
     <h1>Welcome back! Glad to see you, Again!</h1>
 
     <form method="post" action="/login">
-      <div>
+      <div class="propiedades">
         <label for="email">Enter your email</label>
         <input type="email" name="email" required/>
       </div>
 
-      <div>
+      <div class="propiedades" id="label2">
         <label for="password">Enter your password</label>
         <input type="password" name="password" required/>
       </div>
